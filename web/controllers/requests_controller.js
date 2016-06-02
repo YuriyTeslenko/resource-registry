@@ -8,7 +8,6 @@
     RequestsController.$inject = ['$scope', '$http', 'PaginationServicee', 'constant', '$location', '$rootScope'];
     function RequestsController($scope, $http, PaginationServicee, constant, $location, $rootScope) {
 
-        $rootScope.xmlData = [];
         $rootScope.requestQuery = 'requests/showrequest';
         $scope.searchingVal;
         $scope.requestSearch = [];
@@ -71,7 +70,7 @@
 
        $scope.switchPage = function(index) {
            var intervalID = setInterval(function(){
-               if ($rootScope.xmlData.items.length > 0) {
+               if ($rootScope.xmlData.items) {
                    if($scope.request) {
                        PaginationServicee.switchPage(index, $rootScope.requestQuery + '/search?' + buildQuery($scope.request)+ '&')
                            .then(function(data) {

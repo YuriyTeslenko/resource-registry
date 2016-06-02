@@ -8,13 +8,11 @@
     UsersController.$inject = ['RestService', '$location', 'constant', '$filter' , '$rootScope', '$scope', '$http', 'PaginationServicee'];
     function UsersController(RestService, $location, constant, $filter , $rootScope, $scope, $http, PaginationServicee) {
 
-        $rootScope.xmlData = [];
         $scope.roleFilter;
         $scope.userSearch;
         $scope.sortingDone;
         $scope.roleFound = [];
         $scope.communityFound = [];
-        $rootScope.xmlData.items = [];
 
         $scope.modifyRoleName = function() {
             var toEquate = {

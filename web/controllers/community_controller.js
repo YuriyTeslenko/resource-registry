@@ -8,7 +8,6 @@
     UsersCommunity.$inject = ['$scope', '$http', 'PaginationServicee', 'constant', '$location', '$rootScope'];
     function UsersCommunity($scope, $http, PaginationServicee, constant, $location, $rootScope) {
 
-        $rootScope.xmlData = [];
         $scope.searchingVal = "";
         $scope.orderBy = "ASC";
 
@@ -84,7 +83,7 @@
 
         $scope.switchPage = function(index){
             var intervalID = setInterval(function(){
-                if ($rootScope.xmlData.items.length > 0) {
+                if ($rootScope.xmlData.items) {
                     if($scope.request){
                         PaginationServicee.switchPage(index, constant.communitiesQuery + '/search?' + buildQuery($scope.request)+ '&')
                             .then(function(data){

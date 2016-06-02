@@ -10,10 +10,6 @@
 
             obj.currentPage = 1;
 
-            
-            
-
-
             obj.getPages = function() {
                 var pageCount = $rootScope.xmlData._meta.pageCount, currentPage = $rootScope.xmlData._meta.currentPage,
                     paginationRange = constant.paginationRange, beforeCenter, afterCenter;
